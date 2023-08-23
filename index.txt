@@ -1,0 +1,62 @@
+    <div class="game-container">
+        <!-- start head section -->
+        <div class="category">
+            <div class="skill">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                </ul>
+            </div>
+            <div class="count">Questions count :<span>22</span></div>
+        </div>
+        <!-- end head section -->
+        
+        <!-- start question and answer section -->
+        <div class="question-cont">
+            <h1></h1>
+            <div class="answers">
+                <!-- <div class="answer">
+                    <input type="radio" name="answer" id="answer_1">
+                    <label for="answer_1">answer_1</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer" id="answer_2">
+                    <label for="answer_2">answer_2</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer" id="answer_3">
+                    <label for="answer_3">answer_3</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer" id="answer_4">
+                    <label for="answer_4">answer_4</label>
+                </div> -->
+            </div>
+            <input type="submit" value="Submit">
+        </div>
+        <!-- end question and answer section -->
+        
+        <!-- Start bullets and time section -->
+        <div class="bullets">
+            <div class="spans">
+                <span class="selected"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="time">12:22</div>
+        </div>
+        <!-- End bullets and time section -->
+
+
+        <!-- Start Score Section-->
+        <div class="score"><span class="bad">Perfect:</span>  You answered 10 of 10</div>
+        <!-- End     Score Section -->
+    </div>

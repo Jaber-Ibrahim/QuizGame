@@ -1,0 +1,186 @@
+:root {
+    --main-color : #03a9f4;
+    --main-padding : 10px;
+    --main-background-color : #eee;
+    --second-background-color : white;
+    
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Tahoma , Arial;
+    user-select: none;
+}
+
+
+.game-container {
+    background-color: var(--main-background-color);
+    margin: 50px auto;
+    width: 80%;
+    padding: var(--main-padding);
+}
+/* Start category */
+.category {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--main-padding);
+    background-color: #fff;
+    font-weight: bold;
+}
+@media(max-width:756px){
+    .category {
+        flex-direction: column;
+    }
+}
+.category .skill {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    
+}
+.category .skill ul {
+    list-style: none;
+    display: flex;
+    flex: 1;
+}
+.category .skill ul li {
+    cursor: pointer;
+    font-size: 20px;
+    width: 80px;
+    text-align: center;
+    padding: 10px 0;
+}
+.category .skill ul li:hover {
+    background-color: var(--main-background-color);
+}
+/* End category */
+
+/* Start Question */
+.question-cont {
+    display: none;
+    margin: 10px auto;
+    padding: var(--main-padding);
+    background-color: var(--second-background-color);
+}
+
+.answers {
+    background-color: var(--main-background-color);
+    padding: 10px auto;
+    margin: 10px 0;
+    height: 80%;
+}
+.answers .answer{
+    padding: var(--main-padding);
+    font-weight: bold;
+}
+.answers .answer:not(:last-child) {
+    border-bottom: 2px solid var(--second-background-color);
+}
+.answers .answer input[type="radio"] {
+    margin-right: 10px;
+}
+.answers .answer input[type="radio"]:checked + label{
+    color: var(--main-color);
+}
+.answers .answer label {
+    cursor: pointer;
+}
+.btn {
+    padding: var(--main-padding);
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 25%;
+    margin: 0 37.5%;
+    cursor: pointer;
+}
+.btn.restart {
+    display: none;
+}
+/* End Question */
+
+
+/* Start  bullets and time section */
+.bullets {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--main-padding);
+    background-color: white;
+}
+@media(max-width:527px){
+    .bullets {
+        flex-direction: column;
+    }
+}
+.bullets .spans {
+    display: flex;
+    flex: 1;
+}
+.bullets .spans span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--main-background-color);
+    margin-right: 10px;
+}
+.bullets .spans span.done{
+    background-color: var(--main-color);
+}
+
+.bullets .time {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* End  bullets and time section */
+
+/* Start Score Section */
+.score {
+    padding: var(--main-padding) ;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.score .perfect {
+    color: var(--main-color);
+    font-size: 30px;
+}
+.score .bad {
+    color: red;
+    font-size: 20px;
+}
+.score .good {
+    color: #4caf50;
+    font-size: 50px;
+}
+/* End Score Section */
+
+/* Start Footer */
+footer {
+    background-color: black;
+    padding: var(--main-padding);
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--main-color);
+    text-align: center;
+    height: fit-content;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+footer a {
+    text-align: none;
+    color: green;
+}
+
+/* End Footer */

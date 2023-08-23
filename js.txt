@@ -1,0 +1,141 @@
+let questionContainer = document.querySelector(".question-cont");
+console.log(questionContainer);
+let headerQuestion = document.querySelector(".question-cont h1")
+console.log(headerQuestion);
+let answersContainer = document.querySelector(".question-cont .answers");
+console.log(answersContainer);
+let myObj = [];
+
+let btn = document.querySelector(".question-cont input[type=submit]");
+console.log(btn);
+
+fetch(
+  "https://quizapi.io/api/v1/questions?apiKey=o1HRqFdaOLmg4gnxMr0SS6CzURvGsKqz0tVIVB5f&category=code&limit=10&tags=HTML"
+)
+  .then((result) => {
+    // console.log(result.json());
+    return result.json();
+  })
+  .then((questions) => {
+    console.log(questions);
+    console.log(questions[0].question);
+    console.log(questions[0].answers);
+    console.log(questions[0].id);
+    console.log(questions[0].correct_answer);
+    for (let i = 0; i < 10; i++) {
+      myObj["questions" + i] = [];
+      myObj["questions" + i]["question" + i] = questions[i].question;
+      myObj["questions" + i]["answer" + i] = questions[i].answers;
+      myObj["questions" + i]["correctAnswer"] = questions[i].correct_answer;
+    }
+    console.log(myObj);
+    addQuestionsToPage(myObj);
+
+    // let questions = Array.from(result.questions)
+
+    // myObj = [...result.question];
+    // console.log(myObj);
+  });
+
+function addQuestionsToPage(myObj) {
+  console.log(typeof myObj);
+
+  //create h1 which contain the question
+  headerQuestion.innerHTML = myObj["questions0"]["question0"];
+  let radioInput = "";
+  labelForRadio = "";
+  for (let j = 1; j < 5; j++) {
+      //create div with class answers which contains div answer
+      let oneAnswerContainer = document.createElement("div");
+      oneAnswerContainer.className = "answer";
+    //create radion input
+    let radioInput = document.createElement("input");
+    radioInput.type = "radio";
+    radioInput.name = "answer";
+    radioInput.id = `answer${j}`;
+    let chars = "abcd";
+    console.log(radioInput.id);
+    //create lable which contain the answers
+    let labelForRadio = document.createElement("label");
+    labelForRadio.htmlFor = `answer${j}`;
+    labelForRadio.innerText = myObj["questions0"]["answer0"]["answer_" + chars[j - 1]];
+    console.log(labelForRadio);
+    oneAnswerContainer.appendChild(radioInput);
+    oneAnswerContainer.appendChild(labelForRadio);
+    console.log(oneAnswerContainer);
+    answersContainer.appendChild(oneAnswerContainer);
+  }
+  // btn.addEventListener("click" , startGame);
+  console.log(typeof radioInput);
+  console.log("################################");
+}
+
+
+
+// function startGame () {
+//   headerQuestion.innerHTML = "";
+//   oneAnswerContainer =
+// }
+
+
+// for (let i = 1; i < 10; i++) {
+//     console.log(myObj["questions"+i]["question" +i]);
+//     let myQuestions = [];
+//     console.log(typeof myQuestions);
+//     // console.log(questions[i]);
+// }
+// console.log(result[0].question);
+// let myQuestion = document.createElement("h1");
+// let questionText = document.createTextNode(result[0].question);
+// myQuestion.appendChild(questionText);
+// questionContainer.appendChild(myQuestion);
+// console.log(result[0].question);
+// //create div with answers class (container incluse the all answers)
+// let answersDiv = document.createElement("div");
+// answersDiv.className = "answers";
+
+// console.log(result[0].answers);
+// for (let i= 1 ; i < 5 ; i++ ) {
+//     //create div with answer class which include one answer only
+//     let myAnswerDiv = document.createElement("div");
+//     myAnswerDiv.className = "answer";
+
+//create the input radio and its attributes
+
+// for (let i= 0 ; i < result.length ; i++ ) {
+//     console.log(result.length);
+//     console.log(result[i].question);
+//     console.log(result[i].answers);
+//     console.log(result[i].correct_answer);
+
+// }
+
+// console.log(result);
+
+
+
+
+
+
+
+
+bullets display flex
+quetion cont display 
+
+
+
+ //choose the api related to the lang you choose
+  langLis.forEach(element => {
+    element.addEventListener("click" , () => {
+      console.log(element.dataset.lang);
+      if (element.dataset.lang == "html"){
+        return choosenApi = myApi.html;
+      } else if (element.dataset.lang == "js") {
+        return choosenApi = myApi.js
+      } else if (element.dataset.lang == "php") {
+        return choosenApi = myApi.php;
+        // console.log(choosenApi);
+      }
+    })
+  });
+
